@@ -28,32 +28,10 @@ int main(int argc, char **argv)
 
     while (__AFL_LOOP(__UINT16_MAX__)) {
         int len = __AFL_FUZZ_TESTCASE_LEN;
-        if (len < 3) continue;
-        JPEG_DecompressImage(&__AFL_FUZZ_TESTCASE_BUF[8], buffer, *(int*)&__AFL_FUZZ_TESTCASE_BUF[0], *(int*)&__AFL_FUZZ_TESTCASE_BUF[4]);
+        if (len < 8) continue;
+        //int w = *(int*)(&__AFL_FUZZ_TESTCASE_BUF[0]);
+        //int h = *(int*)(&__AFL_FUZZ_TESTCASE_BUF[4]);
+        JPEG_DecompressImage(__AFL_FUZZ_TESTCASE_BUF, buffer, 256, 256);
     }
-    //uint32_t ticks = cpuEndTiming();
-
-    //free(jpg_file);
-
-    //printf("Image decoded!\n");
-
-    //printf("Time elapsed: %" PRIu32 " ms\n", timerTicks2msec(ticks));
-
-    // Flush the cache before doing a DMA copy
-    //DC_FlushRange(buffer, sizeof(buffer));
-    //dmaCopyWords(3, buffer, VRAM_A, sizeof(buffer));
-
-    //printf("\n");
-    //printf("Press START to exit to loader");
-
-    // while (1)
-    // {
-    //     swiWaitForVBlank();
-
-    //     scanKeys();
-    //     if (keysDown() & KEY_START)
-    //         break;
-    // }
-
     return 0;
 }
