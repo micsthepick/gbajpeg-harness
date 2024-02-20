@@ -1,0 +1,5 @@
+[submodule "gbajpeg"]
+	path = gbajpeg
+	url = git@github.com:micsthepick/gbajpeg.git
+[submodule "gbajpeg/"]
+	url = https://github.com/micsthepick/gbajpeg.git
