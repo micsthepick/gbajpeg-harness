@@ -1,6 +1,6 @@
 #!/bin/bash
 # Check if this script is running in a screen session or if the -f flag is passed
-if [[ -z "$STY" && "$1" != "-f" ]]; then
+if [[[ -z "$STY" ] && [ -z "$TMUX" ]  && "$1" != "-f" ]]; then
     echo "This script should run in a screen session. Use -f to run it outside of screen."
     exit 1
 fi

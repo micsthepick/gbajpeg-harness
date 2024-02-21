@@ -1,14 +1,17 @@
 // SPDX-License-Identifier: CC0-1.0
 //
-// SPDX-FileContributor: Antonio Niño Díaz, 2023
+// SPDX-FileContributor:Michael Pannekoek 2024
 
 #include <stdio.h>
 #include <stdlib.h>
 #include <inttypes.h>
 #include <unistd.h>
+#include <assert.h>
 
 //#include <nds.h>
 //#include <filesystem.h>
+
+#define JPEG_Assert assert;
 
 #include <gba-jpeg-decode.h>
 
