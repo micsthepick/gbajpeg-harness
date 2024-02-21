@@ -1,8 +1,5 @@
 #!/bin/bash
 
-# Run watch command as a background task
-watch -n 1 afl-whatsup /outs/out &
-
 # Start a detached tmux session named 'mysession'
 tmux new-session -d -s mysession
 
